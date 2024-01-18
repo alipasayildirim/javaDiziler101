@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class Main {
 
  */
 
+        /*
         int [] list = {1,2,3,4,5};
         int n = list.length;
         double k = 1.0;
@@ -27,5 +30,38 @@ public class Main {
 
         double harmonicAvarage = n /harmonicSeries;
         System.out.println("Harmonik Ortalama : " + harmonicAvarage);
+
+         */
+        Scanner input = new Scanner(System.in);
+
+        int[] dizi = {15, 12, 788, 1, -1, -778, 2, 0};
+        int girilenSayi = input.nextInt();
+        Integer kucukEnYakin = null;
+        Integer buyukEnYakin = null;
+
+        for (int sayi : dizi) {
+
+            if ((kucukEnYakin == null || girilenSayi - sayi < girilenSayi - kucukEnYakin) && sayi < girilenSayi) {
+                kucukEnYakin = sayi;
+            }
+
+            if ((buyukEnYakin == null || sayi - girilenSayi < buyukEnYakin - girilenSayi) && sayi > girilenSayi) {
+                buyukEnYakin = sayi;
+            }
+        }
+
+        if (kucukEnYakin != null) {
+            System.out.println("Girilen sayıdan küçük en yakın sayı : " + kucukEnYakin);
+        } else {
+            System.out.println("Girilen sayıdan küçük bir sayı bulunamadı.");
+        }
+
+        if (buyukEnYakin != null) {
+            System.out.println("Girilen sayıdan büyük en yakın sayı : " + buyukEnYakin);
+        } else {
+            System.out.println("Girilen sayıdan büyük bir sayı bulunamadı.");
+        }
+
+
     }
 }
