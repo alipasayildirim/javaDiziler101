@@ -64,6 +64,8 @@ public class Main {
         }
 
          */
+
+        /*
         String [] [] letter = new String[5][4];
 
         for (int i = 0; i <letter.length; i++){
@@ -83,5 +85,23 @@ public class Main {
             }
             System.out.println();
         }
+
+         */
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Dizinin Boyutu : ");
+        int n = input.nextInt();
+        int [] arr = new int[n];
+
+        for (int i = 0; i<n; i++){
+            System.out.print( i + 1 +" Sayı giriniz : ");
+            arr[i] = input.nextInt();
+        }
+
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+
+
+
     }
 }
